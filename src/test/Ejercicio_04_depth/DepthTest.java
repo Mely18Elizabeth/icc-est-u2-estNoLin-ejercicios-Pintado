@@ -8,10 +8,7 @@ import main.Materia.Models.Node;
 import org.junit.jupiter.api.Test;
 
 public class DepthTest {
-    /// 4
-    // 2 7
-    // 1 3
-    // 8
+
     @Test
     public void maxDepthTest() {
         Depth depth = new Depth();

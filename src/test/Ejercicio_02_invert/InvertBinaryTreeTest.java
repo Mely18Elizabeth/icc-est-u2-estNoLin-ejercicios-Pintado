@@ -21,6 +21,7 @@ public class InvertBinaryTreeTest {
         root.getRight().setRight(new Node(9));
 
         Node newRoot = invertBinaryTree.invertTree(root);
+
         assertEquals(4, newRoot.getValue());
         assertEquals(7, newRoot.getLeft().getValue());
         assertEquals(2, newRoot.getRight().getValue());
