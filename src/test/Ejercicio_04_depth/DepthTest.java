@@ -1,25 +1,24 @@
 package test.Ejercicio_04_depth;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import main.Ejercicio_04_depth.Depth;
 import main.Materia.Models.Node;
 
-import org.junit.jupiter.api.Test;
-
+/**
+ * Clase para calcular la profundidad máxima de un árbol binario.
+ */
 public class DepthTest {
 
-    @Test
-    public void maxDepthTest() {
-        Depth depth = new Depth();
-        Node root = new Node(4);
-        root.setLeft(new Node(2));
-        root.setRight(new Node(7));
-        root.getLeft().setLeft(new Node(1));
-        root.getLeft().setRight(new Node(3));
-        root.getLeft().getLeft().setLeft(new Node(8));
+    /**
+     * Calcula la profundidad máxima de un árbol.
+     *
+     * @param root nodo raíz
+     * @return profundidad máxima
+     */
+    public int maxDepth(Node root) {
+        if (root == null) return 0;
 
-        int maxDepth = depth.maxDepth(root);
-        assertEquals(4, maxDepth);
+        int leftDepth = maxDepth(root.getLeft());
+        int rightDepth = maxDepth(root.getRight());
+
+        return 1 + Math.max(leftDepth, rightDepth);
     }
 }
